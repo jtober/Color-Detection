@@ -17,3 +17,8 @@ img = cv2.imread(image_path) #loads image from specific file, in this case it'll
 clicked = False
 r = g = b = xpos = ypos = 0 #hex values and x,y cordinate of mouse
 
+#using pandas to read teh csv file and giving names to each column
+index = ['color','color_name','hex','R','G','B']
+csv = pd.read_csv('colors.csv', names=index, header=None)
+
+#now time for the math part to calculate shortest distance from all colors and find the most matching color
