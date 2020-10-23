@@ -30,7 +30,7 @@ def getColorName(R,G,B):
         if d<= minimum:
             minimum = d
             cname= csv.loc[i, "color_name"]
-        return cname
+    return cname
 
 #function to get x,y coordinates of mouse double click and calculate rbg values
 def draw_function(event, x, y, flags, param):
@@ -51,7 +51,7 @@ while(True):
     cv2.imshow('image',img)
     if (clicked):
         #create rectangle showing image 
-        cv2.rectangle(img,(20,20), (750,60), (b,g,r), -1)
+        cv2.rectangle(img,(15,15), (750,60), (b,g,r), -1)
         #create text to display the color name and its RGB values
         text = getColorName(r,g,b) + ' R='+ str(r) + ' G='+ str(g) + 'B='+ str(b)
 
