@@ -1,6 +1,6 @@
 #modules needed for the project 
 import numpy
-import pandas
+import pandas as pd
 import cv2
 import argparse
 
@@ -33,7 +33,7 @@ def getColorName(R,G,B):
         return cname
 
 #function to get x,y coordinates of mouse double click and calculate rbg values
-def clicked_mouse(event, x, y, flags, param):
+def draw_function(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDBLCLK:
         global b,g,r,xpos,ypos, clicked
         clicked = True
@@ -45,10 +45,10 @@ def clicked_mouse(event, x, y, flags, param):
         r = int(r)
 
 cv2.namedWindow('image')
-cv2.setMouseCallback('image',draw_funcion)
+cv2.setMouseCallback('image',draw_function)
 
 while(True):
-    cv2.show('image',img)
+    cv2.imshow('image',img)
     if (clicked):
         #create rectangle showing image 
         cv2.rectangle(img,(20,20), (750,60), (b,g,r), -1)
